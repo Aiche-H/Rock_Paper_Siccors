@@ -1,0 +1,27 @@
+.goToGameButton {
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.instructionText {
+    margin: 15px;
+    padding: 25px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.animate-sweep {
+  animation: sweep 0.9s linear forwards;
+}
+
+
+@keyframes sweep {
+  0% {
+	opacity: 1;
+  }
+
+  100% {
+	opacity: 0;
+  }
+}

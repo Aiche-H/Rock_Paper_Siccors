@@ -1,0 +1,91 @@
+:root{
+    --white: #eeeeee;
+    --background-color:#161616;
+    --background-gradient: radial-gradient(circle farthest-corner at center center, #161616 0%, #000000 100%);
+    --box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    --hover-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+    --text-shadow: 0px 0px 15px rgb(0, 0, 0);
+    --border: 2px solid rgb(121, 121, 121);
+    --border-radius: 7px;
+    --font-size: 14px;
+    --font-family: 'MyFont', sans-serif
+}
+
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    background: var(--background-color);
+    background: var(--background-gradient);
+    color: var(--white);
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    min-height: 100dvh;
+    overflow-x: hidden;
+}
+
+header {
+    background: var(--background-color);
+    border: var(--border);
+    text-shadow: var(--text-shadow);
+    text-align: center;
+    width: 100dvw;
+    padding: 10px;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column nowrap;
+    padding: 10px;
+    height: clamp(450px, 75vh, 2400px);
+}
+
+a {
+    text-decoration: none;
+    text-shadow: var(--text-shadow);
+    font-family: var(--font-family);
+    color: var(--white);
+    font-size: 1rem;
+}
+
+p {
+    text-shadow: var(--text-shadow);
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+
+button {
+    font-family: var(--font-family);
+    font-size: 1.0rem;
+    background: var(--background-color);
+    background: var(--background-gradient);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    color: var(--white);
+    width: 150px;
+    height: 40px;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: var(--hover-shadow);
+    font-size: 1.05rem;
+}
+
+footer {
+    margin-top: auto;
+    background: var(--background-color);
+    text-shadow: var(--text-shadow);
+    font-size: 1rem;
+    border: var(--border);
+    text-align: center;
+    width: 100dvw;
+    padding: 10px;
+}
