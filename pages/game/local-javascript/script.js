@@ -18,27 +18,41 @@ SCISSORS.addEventListener("click", function () {
 });
 
 // Function to play the game
-function playGame(userChoice) {
-  // Generate a random computer choice
-  const computerChoice = CHOICES[Math.floor(Math.random() * CHOICES.length)];
+// Function to generate a random computer choice
+function generateComputerChoice() {
+  return CHOICES[Math.floor(Math.random() * CHOICES.length)];
+}
 
-  // Determine the winner
-  let result;
+// Function to determine the winner
+function determineWinner(userChoice, computerChoice) {
   if (userChoice === computerChoice) {
-    result = "It's a tie!";
-    RESULT_TEXT.style.color = "white";
+    return "It's a tie!";
   } else if (
     (userChoice === "rock" && computerChoice === "scissors") ||
     (userChoice === "scissors" && computerChoice === "paper") ||
     (userChoice === "paper" && computerChoice === "rock")
   ) {
-    result = "You win!";
+    return "You win!";
+  } else {
+    return "Computer wins!";
+  }
+}
+
+// Function to update the result text
+function updateResultText(result, userChoice, computerChoice) {
+  RESULT_TEXT.textContent = `You chose ${userChoice}, computer chose ${computerChoice}. ${result}`;
+  if (result === "It's a tie!") {
+    RESULT_TEXT.style.color = "white";
+  } else if (result === "You win!") {
     RESULT_TEXT.style.color = "green";
   } else {
-    result = "Computer wins!";
     RESULT_TEXT.style.color = "maroon";
   }
+}
 
-  // Display the result
-  RESULT_TEXT.textContent = `You chose ${userChoice}, computer chose ${computerChoice}. ${result}`;
+// Function to play the game
+function playGame(userChoice) {
+  const computerChoice = generateComputerChoice();
+  const result = determineWinner(userChoice, computerChoice);
+  updateResultText(result, userChoice, computerChoice);
 }
